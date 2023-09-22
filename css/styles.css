@@ -8,6 +8,9 @@
     --c-bg-white: #FFF;
     --c-accent: #E7E9FC;
     --c-success: #31D0AA;
+    --c-modal-bg: #FCFCFC;
+    --c-modal-overlay: #2E2F4266;
+    --c-subtle-text: #8E8F99;
 }
 
 ul {
@@ -32,6 +35,16 @@ img {
     display: block;
     max-width: 100%;
     height: auto;
+}
+
+button {
+    font-family: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+input {
+    font-family: inherit;
 }
 
 body {
@@ -396,6 +409,11 @@ body {
 .footer-inner {
     display: flex;
     align-items: baseline;
+    justify-content: space-between;
+}
+
+.footer-wrapper {
+    display: flex;
 }
 
 .footer-text-container {
@@ -456,4 +474,195 @@ body {
 .footer-social-link:hover,
 .footer-social-link:focus {
     background-color: var(--c-success);
+}
+
+.input-email {
+    border-radius: 4px;
+    border: 1px solid var(--c-bg-white);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+    padding: 8px 16px;
+    background-color: var(--c-dark);
+    max-width: 264px;
+    margin-right: 24px;
+    color: var(--c-light);
+}
+
+.subscribe-btn {
+    min-width: 165px;
+    height: 40px;
+    border-radius: 4px;
+    background: var(--c-primary-brand);
+    padding: 8px 64px 8 px 24px;
+    color: var(--c-bg-white);
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.04px;
+    display: block;
+    border: none;
+}
+
+.footer-input-wrap {
+    display: flex;
+    flex-direction: row;
+}
+
+.subscribe-btn-wrap {
+    position: relative;
+}
+
+.frame-icon {
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    fill: var(--c-light);
+}
+
+/* Modal window */
+
+.backdrop {
+    position: fixed;
+    inset: 0;
+    padding-top: 80px;
+    padding-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 250ms ease-in-out, visibility 250ms ease-in-out;
+}
+
+.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.modal {
+    max-width: 408px;
+    max-height: 584px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 4px;
+    background: var(--c-modal-bg);
+    padding: 72px 24px 24px 24px;
+}
+
+.modal-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-close {
+    position: absolute;    
+    top: 24px;
+    right: 24px;
+    border-radius: 50%;
+    background-color: var(--c-accent);
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-close:hover,
+.modal-close:focus {
+    background-color: var(--c-primary-brand);
+    fill: var(--c-bg-white);
+}
+
+.modal-text {
+    color: var(--c-dark);
+    font-size: inherit;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+.modal-input {
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid var(--c-modal-overlay);
+    padding: 8px 16px 8px 38px;
+    transition-property: border-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-input:focus,
+.modal-textarea:focus {
+    outline: none;
+    border-color: var(--c-primary-brand);
+}
+
+.modal-input-wrap {
+    position: relative;
+    margin-bottom: 8px;
+}
+
+.modal-input-icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition-property: border-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-input:focus + .modal-input-icon {
+    fill: var(--c-primary-brand);
+}
+
+.modal-label {
+    color: var(--c-subtle-text);
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    margin-bottom: 4px;
+}
+
+.modal-textarea {
+    resize: none;
+    width: 100%;
+    min-height: 120px;
+    border-radius: 4px;
+    border: 1px solid var(--c-modal-overlay);
+    padding: 8px 16px;
+    margin-bottom: 16px;
+}
+
+.modal-textarea::placeholder { 
+    color: var(--c-subtle-text);
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04px;
+}
+
+.privacy-policy-label {
+    color: var(--c-subtle-text);
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+}
+
+.privacy-policy-wrap {
+    position: relative;
+    margin-bottom: 24px;
+    padding-left: 24px;
+}
+
+.icon-click {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
 }
