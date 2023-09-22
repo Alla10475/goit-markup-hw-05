@@ -477,14 +477,24 @@ body {
 }
 
 .input-email {
+    width: 264px;
+    height: 40px;
+    font-size: 12px;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+    color: var(--c-bg-white);
     border-radius: 4px;
     border: 1px solid var(--c-bg-white);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
     padding: 8px 16px;
-    background-color: var(--c-dark);
-    max-width: 264px;
+    background-color: transparent;
     margin-right: 24px;
     color: var(--c-light);
+}
+
+.input-email::placeholder {
+    color: var(--c-bg-white);
 }
 
 .subscribe-btn {
@@ -494,13 +504,16 @@ body {
     background: var(--c-primary-brand);
     padding: 8px 24px 8 px 24px;
     color: var(--c-bg-white);
-    font-family: Roboto;
+    font-family: "Roboto", sans-serif;
     font-size: 16px;
     font-weight: 500;
     line-height: 1.5;
-    letter-spacing: 0.04px;
-    display: block;
+    letter-spacing: 0.04em;
+    display: flex;
     border: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 }
 
 .footer-form {
@@ -509,10 +522,8 @@ body {
 }
 
 .frame-icon {
-    /* right: 24px;
-    top: 50%;
-    transform: translateY(-50%); */
     fill: var(--c-light);
+    margin-left: 16px;
 }
 
 /* Modal window */
@@ -555,7 +566,8 @@ body {
         0px 1px 3px rgba(0, 0, 0, 0.12),
         0px 2px 1px rgba(0, 0, 0, 0.2);
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    transform: translateY(-50%, -50%) scale(1);
+    transform: translateY(-50%, -50%);
+    transform: scale(1);
 }
 
 .modal-form {
@@ -579,15 +591,9 @@ body {
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-close:hover {
-    background-color: var(--c-pressed-state);
-    fill: var(--c-bg-white);
-    border: none;
-}
-
+.modal-close:hover,
 .modal-close:focus {
     background-color: var(--c-pressed-state);
-    fill: var(--c-bg-white);
     border: none;
 }
 
@@ -595,8 +601,12 @@ body {
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.icon-close:hover {
+    fill: var(--c-bg-white);
+}
+
 .modal-wrapper {
-    margin-bottom: 16px;
+    margin-bottom: 8px;
 }
 
 .modal-text {
