@@ -503,9 +503,9 @@ body {
     border: none;
 }
 
-.footer-input-wrap {
+.footer-form {
     display: flex;
-    flex-direction: row;
+    gap: 24px;
 }
 
 .subscribe-btn-wrap {
@@ -695,6 +695,18 @@ body {
     padding-left: 24px;
 }
 
+.icon-click-span {
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--c-modal-overlay);
+    border-radius: 2px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    fill: transparent;
+}
+
 .icon-click {
     position: absolute;
     width: 16px;
@@ -702,4 +714,15 @@ body {
     left: 0;
     top: 50%;
     transform: translateY(-50%);
+}
+
+.privacy-policy-link {
+    color: var(--c-primary-brand);
+} 
+
+.input:checked + .icon-click-span {
+    background-color: var(--c-pressed-state);
+    border: none;
+    fill: var(--c-light);
+
 }
