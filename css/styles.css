@@ -492,7 +492,7 @@ body {
     height: 40px;
     border-radius: 4px;
     background: var(--c-primary-brand);
-    padding: 8px 64px 8 px 24px;
+    padding: 8px 24px 8 px 24px;
     color: var(--c-bg-white);
     font-family: Roboto;
     font-size: 16px;
@@ -508,15 +508,10 @@ body {
     gap: 24px;
 }
 
-.subscribe-btn-wrap {
-    position: relative;
-}
-
 .frame-icon {
-    position: absolute;
-    right: 24px;
+    /* right: 24px;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-50%); */
     fill: var(--c-light);
 }
 
